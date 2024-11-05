@@ -53,8 +53,12 @@ class electronicstore<T extends sanpham>{
         x.sort(list);  // Gọi phương thức sort từ đối tượng strategysort
     }
 
+<<<<<<< HEAD
     private List<member> listthongbao = new ArrayList<>();
     public void set_listthongbao(List<member> l){
         this.listthongbao = l;
     }
+=======
+    List<member> listthongbao = new ArrayList<>();
+>>>>>>> 5d2b811a9e59cbc0a278327b77126630252d8d42
 }
