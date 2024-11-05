@@ -1,0 +1,42 @@
+Xây dựng hệ thống quản lý cửa hàng điện tử trực tuyến
+
+Hệ thống cần hỗ trợ các chức năng sau:
+
+1. Quản lý danh sách sản phẩm điện tử (bao gồm tên sản phẩm, nhà sản xuất, và giá bán).
+2. Sắp xếp danh sách sản phẩm theo các tiêu chí khác nhau.
+3. Thông báo cho thành viên khi có sản phẩm mới được thêm vào cửa hàng.
+4. Sử dụng tiến trình song song để quản lý việc thêm sản phẩm và gửi thông báo đến các thành viên.
+Yêu cầu cụ thể:
+1. Sử dụng Generic và Collection
+a. Tạo một lớp ElectronicStore<T> sử dụng Generic để quản lý danh sách sản phẩm.
+b. Sử dụng Collection (List hoặc Set) để lưu trữ danh sách sản phẩm.
+c. Cài đặt các phương thức:
+    addProduct(T product): Thêm sản phẩm mới vào cửa hàng.
+    removeProduct(T product): Xóa sản phẩm khỏi cửa hàng.
+    findProductByName(String name): Tìm sản phẩm theo tên.
+2. Sử dụng Design Pattern
+a. Iterator Pattern: Tạo lớp ElectronicStoreIterator để duyệt qua các sản phẩm trong cửa hàng 
+và thực hiện các thao tác:
+    hasNext(): Kiểm tra xem có sản phẩm tiếp theo không.
+    next(): Lấy sản phẩm tiếp theo.
+b. Strategy Pattern: Tạo hệ thống sắp xếp sản phẩm theo tiêu chí khác nhau:
+    SortByName: Sắp xếp sản phẩm theo tên.
+    SortByManufacturer: Sắp xếp sản phẩm theo nhà sản xuất.
+    SortByPrice: Sắp xếp sản phẩm theo giá bán.
+c. Trong lớp ElectronicStore, cài đặt phương thức setSortStrategy(SortStrategy strategy) 
+để áp dụng chiến lược sắp xếp.
+d. Observer Pattern: Tạo hệ thống thông báo cho người dùng (thành viên) khi có sản phẩm mới.
+Lớp Member sẽ nhận thông báo khi có sản phẩm mới được thêm vào cửa hàng.
+Lớp ElectronicStore sẽ là Subject và lớp Member là Observer.
+3. Sử dụng Thread
+    a. Sử dụng tiến trình song song để thêm nhiều sản phẩm vào cửa hàng.
+    b. Mỗi tiến trình sẽ thêm một danh sách sản phẩm vào cửa hàng.
+    c. Sử dụng Thread hoặc ExecutorService để thực hiện đa luồng.
+    d. Đảm bảo hệ thống hoạt động an toàn trong môi trường đa luồng (sử dụng các biện pháp đồng bộ hóa khi cần).
+Đầu ra mong đợi:
+    Hệ thống phải in ra danh sách sản phẩm theo thứ tự đã sắp xếp 
+ (tên sản phẩm, nhà sản xuất hoặc giá bán).
+    Thành viên phải nhận được thông báo khi có sản phẩm mới.
+    Đảm bảo chương trình chạy mượt mà trong môi trường đa luồng.
+    Với đề bài này, bạn có thể áp dụng tương tự các mẫu thiết kế (Design Patterns) 
+ đã yêu cầu như trong bài quản lý sách, nhưng thay thế sách bằng sản phẩm điện tử.

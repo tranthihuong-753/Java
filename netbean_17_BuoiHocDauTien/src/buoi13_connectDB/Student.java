@@ -1,7 +1,8 @@
-package netbean_17_buoi1;
+package buoi13_connectDB;
 
-public class test {
+public class Student {
     public static void main(String[] args) {
         
     }
+    
 }

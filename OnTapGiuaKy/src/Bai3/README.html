@@ -1,0 +1,37 @@
+Bài 1: Hãy xây dựng một hệ thống quản lý cửa hàng sách trực tuyến. Hệ thống cần hỗ trợ các chức năng sau: 
+1. Quản lý danh sách các sách (bao gồm tiêu đề, tác giả, và năm xuất bản). 
+2. Hỗ trợ sắp xếp danh sách sách theo các tiêu chí khác nhau. 
+3. Cho phép thành viên nhận thông báo khi có sách mới được thêm vào cửa hàng. 
+4. Sử dụng tiến trình song song để quản lý việc thêm sách và thông báo đến các thành viên. 
+
+Yêu cầu cụ thể: 
+1.  Sử dụng Generic và Collection 
+    a. Tạo một lớp BookStore<T> sử dụng Generic để quản lý danh sách sách. 
+    b. Sử dụng Collection (List hoặc Set) để lưu trữ danh sách sách. 
+    c. Cài đặt các phương thức: 
+        o addBook(T book): Thêm sách mới vào cửa hàng. 
+        o removeBook(T book): Xóa sách khỏi cửa hàng. 
+        o findBookByTitle(String title): Tìm sách theo tiêu đề. 
+2. Sử dụng Design Pattern 
+    a. Sử dụng Iterator Pattern để duyệt qua danh sách các sách trong cửa hàng. 
+    b. Tạo lớp BookStoreIterator để duyệt qua các sách và thực hiện các thao tác như: 
+        o hasNext(): Kiểm tra xem có sách tiếp theo không. 
+        o next(): Lấy sách tiếp theo. 
+    c. Tạo hệ thống sắp xếp sách theo tiêu chí khác nhau bằng cách sử dụng Strategy Pattern. 
+        o SortByTitle: Sắp xếp sách theo tiêu đề. 
+        o SortByAuthor: Sắp xếp sách theo tác giả. 
+        o SortByYear: Sắp xếp sách theo năm xuất bản. 
+    d. Trong lớp BookStore, cài đặt phương thức setSortStrategy(SortStrategy strategy) để áp dụng chiến lược sắp xếp. 
+    e. Tạo hệ thống thông báo cho người dùng (thành viên) khi có sách mới sử dụng Observer Pattern. 
+    f.Lớp Member sẽ nhận được thông báo khi có sách mới được thêm vào cửa hàng. 
+    g. Lớp BookStore sẽ là Subject và lớp Member là Observer. 
+3. Tạo Thread 
+    a. Sử dụng tiến trình song song để thêm nhiều sách vào cửa hàng. 
+    b. Mỗi tiến trình sẽ thêm một danh sách sách vào cửa hàng. 
+    c. Sử dụng Thread hoặc ExecutorService để thực hiện đa luồng. 
+    d. Đảm bảo hệ thống hoạt động an toàn trong môi trường đa luồng (sử dụng các biện pháp đồng bộ hóa khi cần). 
+
+Đầu ra mong đợi: 
+    • Hệ thống phải in ra danh sách sách theo thứ tự đã sắp xếp (tiêu đề, tác giả hoặc năm xuất bản). 
+    • Thành viên phải nhận được thông báo khi có sách mới. 
+    • Đảm bảo chương trình chạy mượt mà trong môi trường đa luồng.

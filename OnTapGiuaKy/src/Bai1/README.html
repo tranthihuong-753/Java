@@ -1,0 +1,34 @@
+ĐÈ BÀI 
+Thiết kế ứng dựng quản lý thư viện sách
+1. Generic/Collections
+    Ứng dụng phải có khả năng quản lý nhiều loại sách khác nhau như sách kỹ thuật, văn học, khoa học, v.v. 
+    Mỗi loại sách bao gồm danh sách các chi tiết cụ thể như tên, tác giả, năm xuất bản, v.v.
+2. Iterator Pattern
+    Hệ thống phải cho phép duyệt qua các loại sách trong thư viện một cách tuần tự 
+    mà không cần quan tâm đến cách lưu trữ nội bộ của chúng.
+3. Strategy Pattern
+    Người dùng có thể chọn chiến lược để sắp xếp sách theo các tiêu chí khác nhau như 
+    tên sách, năm xuất bản, hoặc tác giả.
+4. Observer Pattern
+    Khi một loại sách mới được thêm vào hoặc một cuốn sách bị xóa
+    hệ thống sẽ phải thông báo cho các đối tượng đã đăng ký (subscribers) về những thay đổi này.
+
+CẤU TRÚC package /Bai1/ 
+    book.java thực hiện /1. Generic/Collections/
+        class book 
+    iterator.java thực hiện /2. Iterator Pattern/
+        class create 
+        class hienthi 
+    sort_strategy.java thực hiện /3. Strategy Pattern/
+        interface sort 
+            class sort_tentacgia 
+            class sort_tensach
+            class sort_namxuatban 
+        class sapxep 
+    observer.java thực hiện /4. Observer Pattern/
+        interface quanly 
+            class sachquanly
+            class sachkythuat
+            class sachvanhoc 
+            class observer 
+

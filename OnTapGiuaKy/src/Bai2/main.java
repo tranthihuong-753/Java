@@ -1,6 +1,6 @@
-package netbean_17_buoi1;
+package Bai2;
 
-public class test {
+public class main {
     public static void main(String[] args) {
         
     }
